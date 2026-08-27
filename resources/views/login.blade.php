@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+    @include('sweetalert::alert')
+    
     <div class="container mt-5">
         <div class="row align-items-center justify-content-center">
             <div class="col-6">

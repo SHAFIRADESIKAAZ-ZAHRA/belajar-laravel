@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -40,6 +41,7 @@ class UserController extends Controller
         //return $validate;
         
         User::create($validate);
+        toast('User Berhasil Ditambah!','success');
         return redirect()->to('user')->with('success', 'User berhasil ditambah');
         
     }
@@ -80,6 +82,7 @@ class UserController extends Controller
         $user->name = $validate['name'];
         $user->email = $validate['email'];
         $user->save();
+        toast('User Berhasil Diubah!','success');
         return redirect()->route('user.index')->with('success', 'User berhasil di ubah');
     }
 
@@ -89,6 +92,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+        toast('User Berhasil Dihapus!','success');
         return redirect()->route('user.index')->with('success', 'user berhasil di hapus');
     }
 }
