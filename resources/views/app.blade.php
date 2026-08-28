@@ -19,7 +19,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a href="{{ route('user.index') }}" class="nav-link" aria-disabled="true">Home</a>
+            </li>
+            <li class="nav-item">
+            <a href="{{ route('product.index') }}" class="nav-link" aria-disabled="true">Product</a>
+            </li>
+            <li class="nav-item">
+            <a href="{{ route('category.index') }}" class="nav-link" aria-disabled="true">Category</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">Link</a>

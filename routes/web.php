@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +30,8 @@ Route::post('action-login', [LoginController::class, 'actionLogin'])->name('acti
 Route::middleware('auth')->group(function(){
     // Resource bisa handle : get, post, put, delete
     Route::resource('user', UserController::class);
+    Route::resource('product', ProductController::class);
+    Route::resource('category', CategoryController::class);
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
